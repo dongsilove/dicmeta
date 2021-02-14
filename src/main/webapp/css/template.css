@@ -1,0 +1,19 @@
+@charset "utf-8";
+/*** 페이징 **/
+.paginate{padding:10px 0;font-size: 11px;line-height:normal;text-align:center}
+.paginate a,
+.paginate strong{display:inline-block;position:relative;z-index:2;margin:0 1px;padding:2px 8px;border:1px solid #d6d6d6;background-color:#fff;color:#666;text-decoration:none;vertical-align:top}
+.paginate a:hover,
+.paginate a:active,
+.paginate a:focus{border:1px solid #152346; color:#152346;}
+.paginate strong{border:1px solid #152346; color:#152346;font-weight:bold}
+.paginate .direction{border:0;font-weight:normal;color:#767676;text-decoration:none !important;z-index:1}
+.paginate .direction:hover,
+.paginate .direction:active,
+.paginate .direction:focus{border: none !important;color:#323232;background-color:#fff;}
+.paginate .prev{border-left:0; padding:3px 5px;}
+.paginate .next{border-right:0; padding:3px 5px;} 
+.paginate .direction span{display:inline-block;position:relative;top:5px;width:0;height:0;font-size:0;line-height:0;vertical-align:top}
+.paginate .prev span{margin-right:1px;border:5px solid;border-top:solid #fff;border-bottom:solid #fff;border-left:0}
+.paginate .next span{margin-left:1px;border:5px solid;border-top:solid #fff;border-bottom:solid #fff;border-right:0}
+.paginate .disable, .paginate .disable a:hover {border: none !important; color: #e5e5e5 !important;}
