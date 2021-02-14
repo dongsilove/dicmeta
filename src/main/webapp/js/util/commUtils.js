@@ -58,7 +58,7 @@ var _commUtils = {
 		return x.replace(/,/g,"");
 	},
 	getCodes : function(objs,grpCd) {
-		console.log("grpCd : " + grpCd); return;
+		console.log("grpCd : " + grpCd); 
 		var returnVal = [];
 		var urlT = "/common/codes/" + grpCd;
 		$.ajax({

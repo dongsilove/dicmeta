@@ -7,14 +7,17 @@ import javax.persistence.*;
  * The primary key class for the t_cm_code database table.
  * 
  */
-@Embeddable
+@Entity
 public class TCmCodePK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="grp_cd")
+	@Id
+	@Column(name = "GRP_CD")
 	private String grpCd;
-
+	
+	@Id	
+	@Column(name = "CD")
 	private String cd;
 
 	public TCmCodePK() {
@@ -32,25 +35,5 @@ public class TCmCodePK implements Serializable {
 		this.cd = cd;
 	}
 
-	public boolean equals(Object other) {
-		if (this == other) {
-			return true;
-		}
-		if (!(other instanceof TCmCodePK)) {
-			return false;
-		}
-		TCmCodePK castOther = (TCmCodePK)other;
-		return 
-			this.grpCd.equals(castOther.grpCd)
-			&& this.cd.equals(castOther.cd);
-	}
 
-	public int hashCode() {
-		final int prime = 31;
-		int hash = 17;
-		hash = hash * prime + this.grpCd.hashCode();
-		hash = hash * prime + this.cd.hashCode();
-		
-		return hash;
-	}
 }

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 import dicmeta.app.common.CommonTbl;
+import io.swagger.annotations.ApiModelProperty;
 
 
 /**
@@ -11,13 +12,21 @@ import dicmeta.app.common.CommonTbl;
  * 
  */
 @Entity
+@IdClass(TCmCodePK.class)
 @Table(name="t_cm_code")
 @NamedQuery(name="TCmCode.findAll", query="SELECT t FROM TCmCode t")
 public class TCmCode extends CommonTbl implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@EmbeddedId
-	private TCmCodePK id;
+	@Id
+	@ApiModelProperty(value = "그룹코드")
+	@Column(name = "GRP_CD")
+	private String grpCd;
+	
+	@Id	
+	@ApiModelProperty(value = "코드")
+	@Column(name = "CD")
+	private String cd;
 
 	@Column(name="cd_nm")
 	private String cdNm;
@@ -25,13 +34,6 @@ public class TCmCode extends CommonTbl implements Serializable {
 	public TCmCode() {
 	}
 
-	public TCmCodePK getId() {
-		return this.id;
-	}
-
-	public void setId(TCmCodePK id) {
-		this.id = id;
-	}
 
 	public String getCdNm() {
 		return this.cdNm;
@@ -41,4 +43,25 @@ public class TCmCode extends CommonTbl implements Serializable {
 		this.cdNm = cdNm;
 	}
 
+
+	public String getGrpCd() {
+		return grpCd;
+	}
+
+
+	public void setGrpCd(String grpCd) {
+		this.grpCd = grpCd;
+	}
+
+
+	public String getCd() {
+		return cd;
+	}
+
+
+	public void setCd(String cd) {
+		this.cd = cd;
+	}
+
+	
 }
